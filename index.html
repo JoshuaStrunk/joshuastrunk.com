@@ -3,18 +3,21 @@
     <head>
         <title> Under Construction! </title>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+        <script src="index.js"></script>
     </head>
     <body>
         <!--
         -Below setting up div system so that user has to accept site is under construction before rest is shown to them. 
         -->
-        <div> 
-            <p>Hello World!</p>
-            <p>This site is currently under development please check back later.</p>
+        <div ng-app = "" ng-controller="indexController">
+            <div ng-show = {{warningFlag}}> 
+                <p>Thank you for visiting my site. Be warned this site is currently in development. I am not responsible for any
+                issues that result from exploring the site while it is in development.</p>
+            </div>
+            <div ng-hide = {{warningFlag}}>
+                <p>Please check back soon for more development!</p>
+            </div>
+            <button ng-click ="warningSeen()">Proceed</button>
         </div>
-        <div>
-            
-        </div>
-        
     </body>
 </html>
